@@ -41,6 +41,7 @@ function displayCategories(categories) {
 
     const allButton = document.createElement("button")
     allButton.textContent = "Tous"
+    allButton.classList.add("selected")
     allButton.addEventListener("click", () => {
         displayWorks(works)
         selectedButton(allButton)
@@ -73,4 +74,11 @@ getCategories();
 
 const token = localStorage.getItem("token")
 
-
+if (token) {
+const loginlink = document.querySelector("#loginlink")
+loginlink.textContent = "logout"
+loginlink.addEventListener("click", () => {
+        localStorage.removeItem("token")
+        window.location.href = "index.html"
+    })
+}
