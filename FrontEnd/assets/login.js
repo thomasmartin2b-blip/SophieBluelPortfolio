@@ -10,7 +10,7 @@ document.querySelector("#btn-login").addEventListener("click", async () => {
 
     const logs = await response.json()
 
-    if (logs === 200) {
+    if (response.ok) {
         localStorage.setItem("token", logs.token)
         window.location.href = "index.html"
     } else {

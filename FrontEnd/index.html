@@ -6,11 +6,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+	<div id="modal-overlay" class="hidden">
+    	<div id="modal">
+
+        	<div id="modal-gallery">
+            	<button id="close-modal">
+					<i class="fa-solid fa-x" style="color: rgb(0, 0, 0);"></i>
+				</button>
+            	<h2>Galerie photo</h2>
+            	<div id="modal-works"></div>
+            	<hr>
+            	<button id="btn-add-photo">Ajouter une photo</button>
+        	</div>
+
+        	<div id="modal-form" class="hidden">
+            	<button id="back-to-gallery">
+					<i class="fa-solid fa-arrow-left" style="color: rgb(0, 0, 0);"></i>
+				</button>
+            	<button id="close-modal-form">
+					<i class="fa-solid fa-x" style="color: rgb(0, 0, 0);"></i>
+				</button>
+            	<h2>Ajout photo</h2>
+            	<div id="upload-zone">
+                	<img src="./assets/icons/image.png" alt="upload">
+                	<button id="btn-upload">+ Ajouter photo</button>
+                	<p>jpg, png : 4mo max</p>
+                	<input type="file" id="file-input" accept=".jpg,.png" class="hidden">
+            	</div>
+            	<label for="title-input">Titre</label>
+            	<input type="text" id="title-input">
+            	<label for="category-select">Catégorie</label>
+            	<select id="category-select"></select>
+            	<hr>
+            	<button id="btn-validate">Valider</button>
+        	</div>
+
+    	</div>
+	</div>
+
+<div id="edit-mode" class="hidden">
+		<i class="fa-sharp fa-regular fa-pen-to-square" style="color: rgb(255, 255, 255);"></i>
+		<p>Mode édition</p>
+</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -37,7 +80,13 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="works-header">
+			<h2>Mes Projets</h2>
+			<button id="modify" class="hidden">
+				<i class="fa-sharp fa-regular fa-pen-to-square" style="color: rgb(0, 0, 0);"></i>
+				<p>modifier</p>
+			</button>
+		</div>
 		<div class="filters">
 		</div>
 		<div class="gallery">

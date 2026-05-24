@@ -75,10 +75,65 @@ getCategories();
 const token = localStorage.getItem("token")
 
 if (token) {
+  
 const loginlink = document.querySelector("#loginlink")
 loginlink.textContent = "logout"
 loginlink.addEventListener("click", () => {
         localStorage.removeItem("token")
         window.location.href = "index.html"
+    })
+
+document.querySelector(".filters").style.display = "none"
+document.querySelector("#edit-mode").classList.remove("hidden")
+document.querySelector("#modify").classList.remove("hidden")
+document.querySelector("#modify").style.marginBottom = "100px"
+}
+
+
+
+document.querySelector("#modify").addEventListener("click", () => {
+    document.querySelector("#modal-overlay").classList.remove("hidden")
+    displayModalWorks()
+})
+
+document.querySelector("#close-modal").addEventListener("click", () => {
+    document.querySelector("#modal-overlay").classList.add("hidden")
+})
+
+document.querySelector("#modal-overlay").addEventListener("click", (e) => {
+    if (e.target === document.querySelector("#modal-overlay")) {
+        document.querySelector("#modal-overlay").classList.add("hidden")
+    }
+})
+
+document.querySelector("#btn-add-photo").addEventListener("click", () => {
+    document.querySelector("#modal-gallery").classList.add("hidden")
+    document.querySelector("#modal-form").classList.remove("hidden")
+})
+
+document.querySelector("#back-to-gallery").addEventListener("click", () => {
+    document.querySelector("#modal-form").classList.add("hidden")
+    document.querySelector("#modal-gallery").classList.remove("hidden")
+})
+
+document.querySelector("#close-modal-form").addEventListener("click", () => {
+    document.querySelector("#modal-overlay").classList.add("hidden")
+})
+
+function displayModalWorks() {
+    const modalWorks = document.querySelector("#modal-works")
+    modalWorks.innerHTML = ""
+
+    works.forEach(work => {
+        const figure = document.createElement("figure")
+        const img = document.createElement("img")
+        img.src = work.imageUrl
+
+        const trash = document.createElement("button")
+        trash.innerHTML = '<i class="fa-solid fa-trash-can" style="color: rgb(255, 255, 255);"></i>'
+
+        figure.appendChild(img)
+        figure.appendChild(trash)
+        modalWorks.appendChild(figure)
     })
 }
