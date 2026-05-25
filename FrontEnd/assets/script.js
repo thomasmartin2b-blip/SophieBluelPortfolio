@@ -92,23 +92,24 @@ document.querySelector("#modify").style.marginBottom = "100px"
 
 
 document.querySelector("#modify").addEventListener("click", () => {
-    document.querySelector("#modal-overlay").classList.remove("hidden")
+    document.querySelector("#modal-display").classList.remove("hidden")
     displayModalWorks()
 })
 
 document.querySelector("#close-modal").addEventListener("click", () => {
-    document.querySelector("#modal-overlay").classList.add("hidden")
+    document.querySelector("#modal-display").classList.add("hidden")
 })
 
-document.querySelector("#modal-overlay").addEventListener("click", (e) => {
-    if (e.target === document.querySelector("#modal-overlay")) {
-        document.querySelector("#modal-overlay").classList.add("hidden")
+document.querySelector("#modal-display").addEventListener("click", (e) => {
+    if (e.target === document.querySelector("#modal-display")) {
+        document.querySelector("#modal-display").classList.add("hidden")
     }
 })
 
 document.querySelector("#btn-add-photo").addEventListener("click", () => {
     document.querySelector("#modal-gallery").classList.add("hidden")
     document.querySelector("#modal-form").classList.remove("hidden")
+    displayCategoriesInSelect()
 })
 
 document.querySelector("#back-to-gallery").addEventListener("click", () => {
@@ -117,7 +118,7 @@ document.querySelector("#back-to-gallery").addEventListener("click", () => {
 })
 
 document.querySelector("#close-modal-form").addEventListener("click", () => {
-    document.querySelector("#modal-overlay").classList.add("hidden")
+    document.querySelector("#modal-display").classList.add("hidden")
 })
 
 function displayModalWorks() {
@@ -135,5 +136,17 @@ function displayModalWorks() {
         figure.appendChild(img)
         figure.appendChild(trash)
         modalWorks.appendChild(figure)
+    })
+}
+
+function displayCategoriesInSelect() {
+    const select = document.querySelector("#category-select")
+    select.innerHTML = "<option value=''></option>"
+
+    categories.forEach(category => {
+        const option = document.createElement("option")
+        option.value = category.id
+        option.textContent = category.name
+        select.appendChild(option)
     })
 }

@@ -328,9 +328,178 @@ footer nav ul {
 
 
 
+
+
+
+
+#modal-display {
+	background:#0000004D;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+}
+
+#modal {
+	background: white;
+	border-radius: 10px;
+	padding: 70px;
+	width: 630px;
+	max-height: 650px;
+	overflow-y: auto;
+	position: relative;
+	overflow-y: hidden;
+}
+
+#modal-gallery h2,
+#modal-form h2 {
+	text-align: center;
+	font-size: 26px;
+	font-family: 'Work Sans';
+	color: black;
+	font-weight: lighter;
+}
+
+#modal-gallery {
+	padding: 0 70px;
+}
+
+#modal-works {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+	row-gap: 30px;
+	padding: 50px 0;
+}
+
+#modal-works figure {
+	position: relative;
+	margin: 0;
+}
+
+#modal-works img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 #modal-works button {
-    background-color: black;
-	border: none;
+    background: none;
+	background-color: black;
 	border-radius: 2px;
-    font-size: 14px;
+    font-size: 12px;
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	cursor: pointer;
+	padding: 2px 4px;
+}
+
+#close-modal, #close-modal-form {
+	position: absolute;
+	top: 35px;
+	right: 35px;
+	border: none;
+	background: none;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+
+#btn-add-photo {
+	display: block;
+    margin: 40px auto 0px;
+    background-color:#1D6154;
+	border: none;
+	border-radius: 60px;
+	padding: 12px 0;
+	color: white;
+	font-family: 'Syne';
+	font-size: 16px;
+	width: 55%;
+	cursor: pointer;
+}
+
+/* Modal formulaire */
+
+#modal-form {
+	padding: 0 70px;
+}
+
+#back-to-gallery {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	background: none;
+	border: none;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+#upload-zone {
+	background: #E8F1F6;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+	gap: 10px;
+	margin-bottom: 35px;
+	margin-top: 45px;
+}
+
+#upload-zone i {
+	font-size: 80px;
+}
+
+#upload-zone p {
+	font-size: 12px;
+}
+
+#btn-upload {
+	background: #CBD6DC;
+	border: none;
+	border-radius: 50px;
+	color: #306685;
+	font-size: 16px;
+	padding: 10px 40px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+#modal-form label {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 15px;
+	margin-top: 20px;
+}
+
+#modal-form input[type="text"],
+#modal-form select {
+	width: 100%;
+	height: 55px;
+	box-sizing: border-box;
+	padding: 12px;
+	border: none;
+	box-shadow:0px 4px 14px #00000017;
+}
+
+#category-select {
+	margin-bottom: 40px;
+}
+
+#btn-validate {
+    display: block;
+    margin: 40px auto 0px;
+    background-color:#A7A7A7;
+	border: none;
+	border-radius: 60px;
+	padding: 12px 0px;
+	color: white;
+	font-family: 'Syne';
+	font-size: 16px;
+	width: 55%;	
+	cursor: pointer;
 }
