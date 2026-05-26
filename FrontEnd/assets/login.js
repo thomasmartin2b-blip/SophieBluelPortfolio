@@ -1,3 +1,4 @@
+// Récupération des id connexion 
 document.querySelector("#btn-login").addEventListener("click", async () => {
     const email = document.querySelector("#email").value
     const password = document.querySelector("#password").value
@@ -8,11 +9,14 @@ document.querySelector("#btn-login").addEventListener("click", async () => {
         body: JSON.stringify({ email, password })
     })
 
-    const logs = await response.json()
+    const logs = await response.json() 
 
+// Vérification
+    // Succès 
     if (response.ok) {
         localStorage.setItem("token", logs.token)
         window.location.href = "index.html"
+    // Echec
     } else {
         document.querySelector("#login-error").textContent = "Email ou mot de passe incorrect"
     }

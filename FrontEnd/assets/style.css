@@ -108,11 +108,13 @@ nav li a:hover {
 li:hover {
 	color: #B1663C;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
 	margin: 150px 0;
 }
+
 #introduction figure {
 	flex: 1
 }
@@ -231,7 +233,7 @@ footer nav ul {
 
 
 
-
+/* Page Login */
 
 #login-container {
     display: flex;
@@ -240,7 +242,7 @@ footer nav ul {
     padding-top: 60px;
 }
 
-#login-container h1 {
+#login-container h2 {
     color: #1D6154;
     font-size: 30px;
     margin-bottom: 40px;
@@ -311,7 +313,6 @@ footer nav ul {
 	cursor: pointer;
 }
 
-
 .works-header {
 	display: flex;
 	justify-content: center;
@@ -323,14 +324,7 @@ footer nav ul {
 }
 
 
-
-
-
-
-
-
-
-
+/* Modales */
 
 #modal-display {
 	background:#0000004D;
@@ -348,9 +342,7 @@ footer nav ul {
 	padding: 70px;
 	width: 630px;
 	max-height: 650px;
-	overflow-y: auto;
 	position: relative;
-	overflow-y: hidden;
 }
 
 #modal-gallery h2,
@@ -361,6 +353,8 @@ footer nav ul {
 	color: black;
 	font-weight: lighter;
 }
+
+/* Modale gallerie */
 
 #modal-gallery {
 	padding: 0 70px;
@@ -387,6 +381,7 @@ footer nav ul {
 
 #modal-works button {
     background: none;
+	border: none;
 	background-color: black;
 	border-radius: 2px;
     font-size: 12px;
@@ -458,6 +453,11 @@ footer nav ul {
 	font-size: 12px;
 }
 
+#upload-zone img {
+    max-width: 130px;
+	max-height: 170px;
+}
+
 #btn-upload {
 	background: #CBD6DC;
 	border: none;
@@ -490,10 +490,32 @@ footer nav ul {
 	margin-bottom: 40px;
 }
 
+/* IA */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    appearance: none;
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    border: none;
+    box-shadow: 0px 4px 14px #00000017;
+    box-sizing: border-box;
+}
+
+.select-wrapper i {
+    position: absolute;
+    right: 30px;
+    top: 30%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+/* IA */
+
 #btn-validate {
     display: block;
     margin: 40px auto 0px;
-    background-color:#A7A7A7;
 	border: none;
 	border-radius: 60px;
 	padding: 12px 0px;
@@ -503,3 +525,9 @@ footer nav ul {
 	width: 55%;	
 	cursor: pointer;
 }
+
+#form-error {
+	text-align: center;
+	color: red;
+}
+

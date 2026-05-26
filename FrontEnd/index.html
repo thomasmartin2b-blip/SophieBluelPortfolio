@@ -42,8 +42,12 @@
             	<label for="title-input">Titre</label>
             	<input type="text" id="title-input">
             	<label for="category-select">Catégorie</label>
-            	<select id="category-select"></select>
+            	<div class="select-wrapper">
+    				<select id="category-select"></select>
+    				<i class="fa-solid fa-chevron-down"></i>
+				</div>
             	<hr>
+				<p id="form-error"></p>
             	<button id="btn-validate">Valider</button>
         	</div>
 
@@ -84,7 +88,7 @@
 			<h2>Mes Projets</h2>
 			<button id="modify" class="hidden">
 				<i class="fa-sharp fa-regular fa-pen-to-square" style="color: rgb(0, 0, 0);"></i>
-				<p>modifier</p>
+				<span>modifier</span>
 			</button>
 		</div>
 		<div class="filters">
